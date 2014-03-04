@@ -1,10 +1,10 @@
 <?php
-namespace Esperluette\Model\Comment;
+namespace App\Models\Comment;
 
-use Esperluette\Model;
+use App\Models;
 
-class CommentList extends \Fwk\Collection
+class CommentList extends \Suricate\Collection
 {
     const TABLE_NAME    = 'blog_comments';
-    const ITEM_TYPE     = '\Esperluette\Model\Comment\Comment';
+    const ITEM_TYPE     = '\App\Models\Comment\Comment';
 }

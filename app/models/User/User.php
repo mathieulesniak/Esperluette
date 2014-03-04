@@ -1,11 +1,11 @@
 <?php
-namespace Esperluette\Model\User;
+namespace App\Models\User;
 
-use Esperluette\Model;
+use App\Models;
 use Esperluette\Model\Helper;
 use Fwk;
 
-class User extends Fwk\DBObject
+class User extends Suricate\DBObject
 {
     const TABLE_NAME    = 'blog_users';
     const TABLE_INDEX   = 'id';
@@ -33,7 +33,7 @@ class User extends Fwk\DBObject
             'posts'
         );
         $this->posts = new Model\Blog\PostList();
-        
+
     }
 
     protected function accessToProtectedVariable($property_name)
@@ -46,7 +46,7 @@ class User extends Fwk\DBObject
                 $result = false;
                 break;
         }
-        
+
         return $result;
     }
 

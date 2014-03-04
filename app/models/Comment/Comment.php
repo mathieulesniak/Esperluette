@@ -1,9 +1,9 @@
 <?php
-namespace Esperluette\Model\Comment;
+namespace App\Models\Comment;
 
-use Esperluette\Model;
+use App\Models;
 
-class Comment extends \Fwk\DBObject
+class Comment extends \Suricate\DBObject
 {
     const TABLE_NAME    = 'blog_comments';
     const TABLE_INDEX   = 'id';

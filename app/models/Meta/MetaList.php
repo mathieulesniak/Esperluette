@@ -1,18 +1,17 @@
 <?php
-namespace Esperluette\Model\Meta;
+namespace App\Models\Meta;
 
-use Esperluette\Model;
-use Fwk\Fwk;
+use App\Models;
 
-class MetaList extends \Fwk\Collection
+class MetaList extends \Suricate\Collection
 {
     const TABLE_NAME        = 'blog_metas';
-    const ITEM_TYPE         = '\Esperluette\Model\Meta\Meta';
+    const ITEM_TYPE         = '\App\Models\Meta\Meta';
     const PARENT_ID_NAME    = '';
 
     public function loadConfigurationMetas()
     {
-        
+
     }
 
     public static function buildFromArray($values)

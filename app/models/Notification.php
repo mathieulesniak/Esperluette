@@ -1,7 +1,7 @@
 <?php
-namespace Esperluette\Model;
+namespace App\Models;
 
-use Fwk\Fwk;
+use Suricate\Suricate;
 
 class Notification
 {
@@ -47,7 +47,7 @@ class Notification
 
                 $newData = (array) $message;
             }
-            
+
             $currentSessionData[$type] = $newData;
             Fwk::Session()->write('notifications', $currentSessionData);
         }

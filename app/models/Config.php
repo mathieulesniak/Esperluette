@@ -1,9 +1,7 @@
 <?php
-namespace Esperluette\Model;
+namespace App\Models;
 
-use Fwk;
-
-class Config extends Fwk\Registry
+class Config extends \Suricate\Registry
 {
     protected static $context = 'config';
 }

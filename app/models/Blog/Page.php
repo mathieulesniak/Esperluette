@@ -1,7 +1,7 @@
 <?php
-namespace Esperluette\Model\Blog;
+namespace App\Models\Blog;
 
-use Esperluette\Model;
+use App\Models;
 
 class Post extends Page
 {

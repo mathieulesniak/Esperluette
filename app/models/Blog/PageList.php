@@ -1,8 +1,7 @@
 <?php
-namespace Esperluette\Model\Blog;
+namespace App\Models\Blog;
 
-use Esperluette\Model;
-use Fwk\Fwk;
+use App\Models;
 
 class PageList extends PostList
 {

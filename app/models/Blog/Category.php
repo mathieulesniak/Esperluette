@@ -1,14 +1,14 @@
 <?php
-namespace Esperluette\Model\Blog;
+namespace App\Models\Blog;
 
-use Esperluette\Model;
+use App\Models;
 
-class Category extends \Fwk\DBObject
+class Category extends \Suricate\DBObject
 {
     const TABLE_NAME    = 'blog_categories';
     const TABLE_INDEX   = 'id';
     public $depth;
-    
+
     public function __construct()
     {
         $this->dbVariables = array(
@@ -36,7 +36,7 @@ class Category extends \Fwk\DBObject
                 $result = false;
                 break;
         }
-        
+
         return $result;
     }
 

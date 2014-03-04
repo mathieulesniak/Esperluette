@@ -1,7 +1,7 @@
 <?php
-namespace Esperluette\Model\Blog;
+namespace App\Models\Blog;
 
-class TagList extends \Fwk\CollectionMapping
+class TagList extends \Suricate\CollectionMapping
 {
     const TABLE_NAME                    = 'blog_tags';
     const ITEM_TYPE                     = '\Esperluette\Model\Blog\Tag';
@@ -19,7 +19,7 @@ class TagList extends \Fwk\CollectionMapping
         $sqlParams = array(':tag' => '%' . $criteria . '%');
 
         $this->loadFromSql($sql, $sqlParams);
-        
+
         $result = array('tags' => array());
         foreach ($this->getPossibleValuesFor('tag') as $currentTag) {
             $result['tags'][] = array('tag' => $currentTag);

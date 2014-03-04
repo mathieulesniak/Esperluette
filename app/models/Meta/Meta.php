@@ -1,7 +1,7 @@
 <?php
-namespace Esperluette\Model\Meta;
+namespace App\Model\Meta;
 
-use Esperluette\Model;
+use App\Model;
 
 class Meta extends \Fwk\DBObject
 {

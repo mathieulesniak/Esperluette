@@ -1,9 +1,9 @@
 <?php
-namespace Esperluette\Model\Blog;
+namespace App\Models\Blog;
 
-use Esperluette\Model;
+use App\Models;
 
-class Post extends \Fwk\DBObject
+class Post extends \Suricate\DBObject
 {
     const TABLE_NAME    = 'blog_posts';
     const TABLE_INDEX   = 'id';
@@ -17,6 +17,7 @@ class Post extends \Fwk\DBObject
         self::STATUS_PUBLISHED  => 'published',
         self::STATUS_DRAFT      => 'draft'
     );
+
     public function __construct()
     {
         $this->dbVariables = array(
@@ -67,7 +68,7 @@ class Post extends \Fwk\DBObject
                 $result = false;
                 break;
         }
-        
+
         return $result;
     }
 
@@ -81,7 +82,7 @@ class Post extends \Fwk\DBObject
 
         return true;
     }
-    
+
     private function loadCategory()
     {
         $category = new Category();
@@ -118,7 +119,7 @@ class Post extends \Fwk\DBObject
 
     public function getURL()
     {
-        
+
     }
 
     public function getStatus()
@@ -129,7 +130,7 @@ class Post extends \Fwk\DBObject
     private function parse($content)
     {
         $markdownParser = new Model\Markdown\MarkdownExtraParser();
-        
+
         return $markdownParser->transformMarkdown($content);
     }
 
@@ -161,6 +162,6 @@ class Post extends \Fwk\DBObject
                 $currentComment->delete();
             }
         }
-        
+
     }
 }

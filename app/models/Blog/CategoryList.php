@@ -1,9 +1,9 @@
 <?php
-namespace Esperluette\Model\Blog;
+namespace App\Models\Blog;
 
-use Esperluette\Model;
+use App\Models;
 
-class CategoryList extends \Fwk\Collection
+class CategoryList extends \Suricate\Collection
 {
     const TABLE_NAME    = 'blog_categories';
     const ITEM_TYPE     = '\Esperluette\Model\Blog\Category';
@@ -24,15 +24,15 @@ class CategoryList extends \Fwk\Collection
 
             $tree[$id] = array_merge(array('id' => $id, 'name' => $currentItem->name), $tree[$id]) ;
 
-            
+
             if (!isset($tree[$parent])) {
                 $tree[$parent] = array();
             }
-    
+
             $tree[$parent]['items'][$id] =& $tree[$id];
-        
+
         }
- 
+
         $this->tree = $tree[0]['items'];
         uasort($this->tree, array($this, 'sortTree'));
 
@@ -62,7 +62,7 @@ class CategoryList extends \Fwk\Collection
         foreach ($this->items as $currentItem) {
             $result[$currentItem->id] = str_repeat('—', $currentItem->depth) . $currentItem->name;
         }
-        
+
         return $result;
     }
 
