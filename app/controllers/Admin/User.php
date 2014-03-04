@@ -1,5 +1,5 @@
 <?php
-namespace Esperluette\Controller\Admin;
+namespace App\Controllers\Admin;
 
 use Esperluette\Model;
 use Esperluette\Model\Helper;
@@ -9,7 +9,7 @@ use Fwk\Fwk;
 use Fwk\Validator;
 
 
-class User extends \Esperluette\Controller\Base
+class User extends \App\Controllers\Base
 {
     public function getUsers($page = null)
     {
@@ -29,7 +29,7 @@ class User extends \Esperluette\Controller\Base
     public function editUser($userId = null)
     {
         $model = new Model\User\User();
-        
+
         if ($userId != '') {
             $model->load($userId);
 
@@ -50,15 +50,15 @@ class User extends \Esperluette\Controller\Base
                 'active'            => '',
                 'level'             => ''
             );
-            
 
-            
+
+
             foreach ($userOptions as $item => $defaultValue) {
                 $userData[$item] = Fwk::Request()->getPostParam($item, $defaultValue);
             }
-            
+
             $validator = new Validator($userData);
-            
+
             // Check nickname only if in creation mode
             if ($model->id === null) {
                 $validator
@@ -104,7 +104,7 @@ class User extends \Esperluette\Controller\Base
                 $this->response->redirect($_SERVER['REQUEST_URI']);
             }
         }
-        
+
         $view = new View\Admin\User\Edit($model);
         $this->response->setBody($view->render());
     }

@@ -1,5 +1,5 @@
 <?php
-namespace Esperluette\Controller;
+namespace App\Controllers;
 
 use \Esperluette\Model;
 use \Esperluette\View;
@@ -24,7 +24,7 @@ class Blog extends Base
         }
         Registry::set('post', $model);
         // Set Model data into registry
-        
+
         $view = new View\Template('post');
         $this->response->setBody($view->render());
     }
@@ -55,8 +55,8 @@ class Blog extends Base
             $model = $collection->loadForCategoryId($category->id);
             echo count($model) . 'posts to display';
         }
-        
-        
+
+
         $view = new View\Template('posts');
         if ($view->exists('posts-' . $category->slug)) {
             $view->setTemplate('posts-' . $category);

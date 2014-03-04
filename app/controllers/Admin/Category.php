@@ -1,5 +1,5 @@
 <?php
-namespace Esperluette\Controller\Admin;
+namespace App\Controllers\Admin;
 
 use Esperluette\View;
 use Esperluette\Model;
@@ -11,7 +11,7 @@ use Fwk\Fwk;
 use Fwk\Validator;
 
 
-class Category extends \Esperluette\Controller\Base
+class Category extends \App\Controllers\Base
 {
     public function getCategories($page = null)
     {
@@ -79,7 +79,7 @@ class Category extends \Esperluette\Controller\Base
                 $this->response->redirect(url('/admin/categories'));
             }
         }
-        
+
         $view = new View\Admin\Category\Edit($model);
         $this->response->setBody($view->render());
     }
@@ -90,7 +90,7 @@ class Category extends \Esperluette\Controller\Base
             $model = new Model\Blog\Category();
             $model->load($categoryId);
             if ($model->id !== null) {
-                
+
                 // Cannot delete default category
                 if ($model->id == Config::get('posts_default_category')) {
                     Notification::write('error', Helper::i18n('error.categories.cannot_delete_default'));

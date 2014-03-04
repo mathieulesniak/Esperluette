@@ -1,5 +1,5 @@
 <?php
-namespace Esperluette\Controller\Admin;
+namespace App\Controllers\Admin;
 
 use Esperluette\Model;
 use Esperluette\View;
@@ -8,14 +8,14 @@ use Esperluette\Model\Notification;
 use Fwk\Fwk;
 use Fwk\Validator;
 
-class Page extends \Esperluette\Controller\Base
+class Page extends \App\Controllers\Base
 {
     public function getPages($statusName = '',$page = null)
     {
         if ($page == null) {
             $page = 1;
         }
-        
+
         if ($statusName == '') {
             $model  = Model\Blog\PageList::loadAll();
         } else {

@@ -1,18 +1,18 @@
 <?php
-namespace Esperluette\Controller\Admin;
+namespace App\Controllers\Admin;
 
 use Esperluette\Model;
 use Esperluette\Model\Helper;
 use \Esperluette\View;
 
-class Comment extends \Esperluette\Controller\Base
-{    
+class Comment extends \App\Controllers\Base
+{
     public function getComments($statusName = '', $page = null)
     {
         if ($page == null) {
             $page = 1;
         }
-        
+
         if ($statusName == '') {
             $model  = Model\Comment\CommentList::loadAll();
         } else {

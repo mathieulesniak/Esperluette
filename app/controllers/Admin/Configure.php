@@ -1,5 +1,5 @@
 <?php
-namespace Esperluette\Controller\Admin;
+namespace App\Controllers\Admin;
 
 use \Esperluette\Model;
 use \Esperluette\Model\Helper;
@@ -8,7 +8,7 @@ use \Esperluette\Model\Notification;
 use \Fwk\Validator;
 use \Fwk\Fwk;
 
-class Configure extends \Esperluette\Controller\Base
+class Configure extends \App\Controllers\Base
 {
     public function getHomepage()
     {
@@ -36,11 +36,11 @@ class Configure extends \Esperluette\Controller\Base
                 'comments_wordlist_spam'        => '',
                 'theme'                         => '',
             );
-            
+
             foreach ($configOptions as $item => $defaultValue) {
                 $config[$item] = Fwk::Request()->getPostParam($item, $defaultValue);
             }
-            
+
             $validator = new Validator($config);
 
             $validator
@@ -57,7 +57,7 @@ class Configure extends \Esperluette\Controller\Base
             $validator
                 ->validate('posts_default_category')
                 ->notBlank(Helper::i18n('error.config.posts_default_category_empty'));
-                
+
             $validator
                 ->validate('posts_per_page')
                 ->digit(Helper::i18n('error.config.post_per_page_number'));
@@ -66,7 +66,7 @@ class Configure extends \Esperluette\Controller\Base
                 ->validate('comments_autoclose_after')
                 ->digit(Helper::i18n('error.config.comments_autoclose_after_number'))
                 ->notBlank(Helper::i18n('error.config.comments_autoclose_after_empty'));
-            
+
             if ($config['date_format'] == 'custom') {
                 $validator
                     ->validate('date_format_custom')
@@ -78,7 +78,7 @@ class Configure extends \Esperluette\Controller\Base
                     ->validate('time_format_custom')
                     ->notBlank(Helper::i18n('error.config.time_format_empty'));
             }
-            
+
             if ($errors = $validator->getErrors()) {
                 Notification::write('error', $errors);
             } else {
