@@ -1,0 +1,21 @@
+{
+    "name": "suricate-php/suricate",
+    "description": "Suricate base app layout",
+    "authors": [
+        {
+            "name": "Mathieu LESNIAK",
+            "email": "mathieu@lesniak.fr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "suricate-php/framework": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "app/controllers",
+            "app/models",
+            "app/views"
+        ]
+    }
+}
