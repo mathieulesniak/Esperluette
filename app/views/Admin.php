@@ -1,11 +1,11 @@
 <?php
-namespace Esperluette\View;
+namespace App\Views;
 
-use Esperluette\Model\Helper;
-use Esperluette\Model\Notification;
+use App\Models\Helper;
+use App\Models\Notification;
 use Fwk\Fwk;
 
-class Admin extends \Fwk\Page
+class Admin extends \Suricate\Page
 {
     protected $model;
     protected $removeTemplate = false;

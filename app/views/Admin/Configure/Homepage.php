@@ -1,17 +1,17 @@
 <?php
-namespace Esperluette\View\Admin\Configure;
+namespace App\Views\Admin\Configure;
 
-use Esperluette\Model;
-use Esperluette\Model\Theme;
-use Esperluette\Model\Blog\CategoryList;
-use Esperluette\View;
-use Esperluette\Model\Helper;
+use App\Models;
+use App\Models\Theme;
+use App\Models\Blog\CategoryList;
+use App\Views;
+use App\Model\Helper;
 use Fwk\FormItem;
 use Fwk\Fwk;
-use Esperluette\Model\Config;
+use App\Models\Config;
 
 
-class Homepage extends \Esperluette\View\Admin
+class Homepage extends \App\Views\Admin
 {
     protected $section = 'setup';
 

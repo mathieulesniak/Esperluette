@@ -1,14 +1,14 @@
 <?php
-namespace Esperluette\View\Admin\User;
+namespace App\Views\Admin\User;
 
-use Esperluette\Model;
-use Esperluette\View;
-use Esperluette\Model\Helper;
+use App\Models;
+use App\Views;
+use App\Models\Helper;
 use Fwk\Fwk;
 use Fwk\FormItem;
 
 
-class Edit extends \Esperluette\View\Admin
+class Edit extends \App\Views\Admin
 {
     protected $section = 'user';
 

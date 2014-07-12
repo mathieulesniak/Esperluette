@@ -3,7 +3,7 @@ namespace App\Controllers;
 
 use \App\Models;
 use \App\Views;
-use \Fwk\Registry;
+use \Suricate\Registry;
 
 class Blog extends Base
 {

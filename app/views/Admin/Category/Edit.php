@@ -1,15 +1,15 @@
 <?php
-namespace Esperluette\View\Admin\Category;
+namespace App\Views\Admin\Category;
 
-use Esperluette\Model;
-use Esperluette\Model\Blog\CategoryList;
-use Esperluette\View;
-use Esperluette\Model\Helper;
+use App\Models;
+use App\Models\Blog\CategoryList;
+use App\Views;
+use App\Models\Helper;
 use Fwk\Fwk;
 use Fwk\FormItem;
 
 
-class Edit extends \Esperluette\View\Admin
+class Edit extends \App\Views\Admin
 {
     protected $section = 'category';
 

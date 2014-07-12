@@ -1,12 +1,12 @@
 <?php
-namespace Esperluette\View\Admin\Comment;
+namespace App\Views\Admin\Comment;
 
-use Esperluette\Model;
-use Esperluette\View;
-use Esperluette\Model\Helper;
+use App\Models;
+use App\Views;
+use App\Models\Helper;
 
 
-class Homepage extends \Esperluette\View\PaginatedAdmin
+class Homepage extends \App\Views\PaginatedAdmin
 {
     protected $section = 'comment';
 

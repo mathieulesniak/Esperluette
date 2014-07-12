@@ -1,5 +1,5 @@
 <?php
-namespace Esperluette\View;
+namespace App\Views;
 
 class PaginatedAdmin extends Admin
 {

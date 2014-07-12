@@ -1,7 +1,7 @@
 <?php
-namespace Esperluette\View;
+namespace App\Views;
 
-use Esperluette\Model\Config;
+use App\Models\Config;
 
 class Template
 {

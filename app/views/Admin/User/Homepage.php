@@ -1,10 +1,10 @@
 <?php
-namespace Esperluette\View\Admin\User;
+namespace App\Views\Admin\User;
 
-use Esperluette\Model;
-use Esperluette\Model\Helper;
+use App\Models;
+use App\Models\Helper;
 
-class Homepage extends \Esperluette\View\PaginatedAdmin
+class Homepage extends \App\Views\PaginatedAdmin
 {
 
     protected $section = 'user';

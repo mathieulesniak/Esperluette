@@ -1,12 +1,12 @@
 <?php
-namespace Esperluette\View\Admin\Post;
+namespace App\Views\Admin\Post;
 
-use Esperluette\Model;
-use Experluette\View;
-use Esperluette\Model\Helper;
+use App\Models;
+use App\Views;
+use App\Models\Helper;
 use Fwk\FormItem;
 
-class Homepage extends \Esperluette\View\PaginatedAdmin
+class Homepage extends \App\Views\PaginatedAdmin
 {
     public function render($content = '')
     {   
