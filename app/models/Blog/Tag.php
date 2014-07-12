@@ -12,9 +12,9 @@ class Tag extends \Suricate\DBObject
     {
 
         $this->dbVariables = array(
-                                'id',
-                                'tag'
-                            );
+            'id',
+            'tag'
+        );
     }
 
     public function getUrl()

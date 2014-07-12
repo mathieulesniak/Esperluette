@@ -26,9 +26,9 @@ class Category extends \Suricate\DBObject
         $this->posts = new PostList();
     }
 
-    protected function accessToProtectedVariable($property_name)
+    protected function accessToProtectedVariable($propertyName)
     {
-        switch ($property_name) {
+        switch ($propertyName) {
             case 'posts':
                 $result = $this->loadPosts();
                 break;

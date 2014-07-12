@@ -5,7 +5,7 @@ use App\Models;
 use Esperluette\Model\Helper;
 use Fwk;
 
-class User extends Suricate\DBObject
+class User extends \Suricate\DBObject
 {
     const TABLE_NAME    = 'blog_users';
     const TABLE_INDEX   = 'id';
@@ -19,26 +19,27 @@ class User extends Suricate\DBObject
 
     public function __construct()
     {
-        $this->dbVariables = array('id',
-                                    'nickname',
-                                    'first_name',
-                                    'last_name',
-                                    'name_display',
-                                    'email',
-                                    'password',
-                                    'active',
-                                    'level'
-                                );
+        $this->dbVariables = array(
+            'id',
+            'nickname',
+            'first_name',
+            'last_name',
+            'name_display',
+            'email',
+            'password',
+            'active',
+            'level'
+        );
         $this->protectedVariables = array(
             'posts'
         );
-        $this->posts = new Model\Blog\PostList();
+        $this->posts = new Models\Blog\PostList();
 
     }
 
-    protected function accessToProtectedVariable($property_name)
+    protected function accessToProtectedVariable($propertyName)
     {
-        switch ($property_name) {
+        switch ($propertyName) {
             case 'posts':
                 $result = $this->loadPosts();
                 break;
@@ -53,7 +54,7 @@ class User extends Suricate\DBObject
     private function loadPosts()
     {
         if ($this->id != '') {
-            $postList = new Model\Blog\PostList();
+            $postList = new Models\Blog\PostList();
             $postList->loadForUserId($this->id);
             $this->posts = $postList;
         }
