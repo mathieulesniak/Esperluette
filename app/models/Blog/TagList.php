@@ -4,7 +4,7 @@ namespace App\Models\Blog;
 class TagList extends \Suricate\CollectionMapping
 {
     const TABLE_NAME                    = 'blog_tags';
-    const ITEM_TYPE                     = '\Esperluette\Model\Blog\Tag';
+    const ITEM_TYPE                     = '\App\Models\Blog\Tag';
     const SQL_RELATION_TABLE_NAME       = 'blog_tags_mapping';
     const MAPPING_ID_NAME               = 'tag_id';
     const PARENT_ID_NAME                = 'post_id';

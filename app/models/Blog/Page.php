@@ -3,7 +3,7 @@ namespace App\Models\Blog;
 
 use App\Models;
 
-class Post extends Page
+class Page extends Post
 {
     const TABLE_NAME    = 'blog_pages';
     const TABLE_INDEX   = 'id';

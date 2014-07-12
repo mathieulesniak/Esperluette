@@ -6,7 +6,7 @@ use App\Models;
 class CategoryList extends \Suricate\Collection
 {
     const TABLE_NAME    = 'blog_categories';
-    const ITEM_TYPE     = '\Esperluette\Model\Blog\Category';
+    const ITEM_TYPE     = '\App\Models\Blog\Category';
 
     private $tree;
     private $flattenedTree;

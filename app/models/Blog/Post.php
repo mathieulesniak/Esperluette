@@ -21,33 +21,33 @@ class Post extends \Suricate\DBObject
     public function __construct()
     {
         $this->dbVariables = array(
-                                'id',
-                                'category_id',
-                                'title',
-                                'slug',
-                                'author_id',
-                                'intro',
-                                'content',
-                                'date',
-                                'status',
-                                'comments',
-                            );
+            'id',
+            'category_id',
+            'title',
+            'slug',
+            'author_id',
+            'intro',
+            'content',
+            'date',
+            'status',
+            'comments',
+        );
         $this->protectedVariables = array(
-                                        'owner',
-                                        'category',
-                                        'tags',
-                                        'comments_list'
-                            );
+            'owner',
+            'category',
+            'tags',
+            'comments_list'
+        );
 
-        $this->owner                = new Model\User\User();
+        $this->owner                = new Models\User\User();
         $this->category             = new Category();
         $this->tags                 = new TagList();
-        $this->comments_list        = new Model\Comment\CommentList();
+        $this->comments_list        = new Models\Comment\CommentList();
     }
 
-    protected function accessToProtectedVariable($property_name)
+    protected function accessToProtectedVariable($propertyName)
     {
-        switch ($property_name) {
+        switch ($propertyName) {
             case 'owner':
                 $result = $this->loadOwner();
                 break;
@@ -75,7 +75,7 @@ class Post extends \Suricate\DBObject
     private function loadOwner()
     {
         if ($this->author_id != '') {
-            $owner = new Model\User\User();
+            $owner = new Models\User\User();
             $owner->load($this->author_id);
             $this->owner = $owner;
         }
@@ -101,7 +101,7 @@ class Post extends \Suricate\DBObject
 
     private function loadComments()
     {
-        $this->comments_list = Model\Comment\CommentList::loadForParentId($this->id)->sort('date_added', 'ASC');
+        $this->comments_list = Models\Comment\CommentList::loadForParentId($this->id)->sort('date_added', 'ASC');
 
         return true;
     }
@@ -129,7 +129,7 @@ class Post extends \Suricate\DBObject
 
     private function parse($content)
     {
-        $markdownParser = new Model\Markdown\MarkdownExtraParser();
+        $markdownParser = new Models\Markdown\MarkdownExtraParser();
 
         return $markdownParser->transformMarkdown($content);
     }
